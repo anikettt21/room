@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Name Study-Room</title>
+    <link rel="icon" type="image/png" href="assets/logo2.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="assets/logo1.png" alt="Logo" class="logo">
+            <span class="logo-text">Name Study-Room</span>
+        </div>
+        <div class="nav-buttons">
+            <a href="index.html" class="btn-outline">Home</a>
+            <a href="students.html" class="btn-outline">View Students</a>
+        </div>
+    </header>
+
+    <!-- Registration Form -->
+    <main class="form-container">
+        <h2>Register for a Study Room</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email (Optional)">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" maxlength="10" required>
+            </div>
+            <div class="form-group">
+                <label for="hall">Hall:</label>
+                <select id="hall" name="hall" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seat">Seat Number:</label>
+                <input type="number" id="seat" name="seat" required>
+            </div>
+            <div class="form-group">
+                <label for="seat-type">Seat Type:</label>
+                <select id="seat-type" name="seat-type" required>
+                    <option value="fixed">Fixed</option>
+                    <option value="non-fixed">Non-Fixed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="online">Online</option>
+                    <option value="cash">Cash</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="remaining-fees">Remaining Fees:</label>
+                <select id="remaining-fees" name="remaining-fees" required>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="form-group" id="fees-group" style="display: none;">
+                <label for="fees">Amount Remaining:</label>
+                <input type="number" id="fees" name="fees">
+            </div>
+            <!-- Registration Date -->
+            <div class="form-group">
+                <label for="registration-date">Registration Date:</label>
+                <input type="date" id="registration-date" name="registration-date" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Name Study-Room. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">About Developer</a>
+            <a href="#">Complain Here</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    <script src="js/registration.js"></script>
+    <script>
+        // Check for edit parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit');
+    
+        if(editId) {
+            // Change page title
+            document.title = "Edit Student - Name Study-Room";
+            document.querySelector('h2').textContent = "Edit Student Registration";
+    
+            // Fetch student data
+            fetch(`http://localhost:5000/students/${editId}`)
+                .then(response => response.json())
+                .then(student => {
+                    // Populate form fields
+                    document.getElementById('name').value = student.name;
+                    document.getElementById('surname').value = student.surname;
+                    document.getElementById('email').value = student.email;
+                    document.getElementById('phone').value = student.phone;
+                    document.getElementById('hall').value = student.hall;
+                    document.getElementById('seat').value = student.seat_number;
+                    document.getElementById('seat-type').value = student.seat_type;
+                    document.getElementById('payment-method').value = student.payment_method;
+                    document.getElementById('remaining-fees').value = student.remaining_fees;
+                    document.getElementById('registration-date').value = student.registration_date;
+    
+                    // Handle fees amount visibility
+                    if(student.remaining_fees === 'yes') {
+                        document.getElementById('fees-group').style.display = 'block';
+                        document.getElementById('fees').value = student.fees_amount;
+                    }
+                });
+        }
+    </script>
+    <script src="js/adminAuth.js"></script>
+
+</body>
+</html>

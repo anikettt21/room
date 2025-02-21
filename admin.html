@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - Name Study-Room</title>
+  <link rel="icon" type="image/png" href="assets/logo2.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- Admin Login (shown if password is set) -->
+  <div id="admin-login" class="admin-container" style="display: none;">
+    <h2>Admin Login</h2>
+    <input type="password" id="admin-password-input" placeholder="Enter Password">
+    <button id="admin-login-button" class="btn">Login</button>
+    <p id="login-error" class="error-message"></p>
+  </div>
+
+  <!-- Admin Panel (shown after login or if no password is set) -->
+  <div id="admin-panel" class="admin-container" style="display: none;">
+    <h2>Admin Panel</h2>
+    <div class="admin-options">
+      <button onclick="location.href='index.html'" class="btn">Home</button>
+      <button onclick="location.href='registration.html'" class="btn">Register Student</button>
+      <button onclick="location.href='hall1.html'" class="btn">View Halls</button>
+      <button onclick="location.href='students.html'" class="btn">View All Students</button>
+    </div>
+    <hr>
+    <h3>Set / Change Admin Password</h3>
+    <input type="password" id="new-admin-password" placeholder="New Password">
+    <button id="set-password-button" class="btn">Save Password</button>
+    <p id="password-message"></p>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+/* General Styling */
+.hall-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hall-container h2 {
+  margin-bottom: 20px;
+  color: #273c53;
+}
+
+
+/* Add Seat Button */
+#add-seat-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#add-seat-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  .seat-layout {
+      grid-template-columns: repeat(5, 1fr); /* 5 seats per row on small screens */
+  }
+}
+.seat-layout {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+
+.seat.available {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.seat.sold {
+  background-color: #f44336;
+  color: white;
+  cursor: not-allowed;
+}
+.seat {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  border: 1px solid #333;
+  position: relative;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.seat.available {
+  background-color: #415a77;
+}
+
+.seat.sold {
+  background-color: #2d6a4f;
+}
+
+.seat.removed {
+  background-color: #f4d58d;
+}
+
+.seat.removed-permanent {
+  background-color: #d00000;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 10px;
+  cursor: pointer;
+  color: #333;
+}
+/* Styling for the month-select dropdown */
+#month-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #273c53;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #273c53;
+  margin: 20px 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#month-select:focus {
+  border-color: #007bff;
+}
+
+/* Styling for the monthly report container */
+#monthly-report {
+  background: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#monthly-report h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #273c53;
+}

@@ -1,0 +1,281 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white; /* Changed background to white */
+    color: #273c53; /* Updated text color for contrast */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header .logo-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #273c53; /* Updated logo text color */
+}
+
+.header .nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header .nav-buttons button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid #273c53; /* Updated border color */
+    color: #273c53; /* Updated button text color */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.header .nav-buttons button:hover {
+    background-color: #273c53; /* Button background on hover */
+    color: white; /* Button text color on hover */
+}
+
+/* Main Container */
+.students-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #273c53;
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    color: #555;
+}
+
+table .text-success {
+    color: green;
+    font-weight: bold;
+}
+
+table .text-danger {
+    color: red;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Buttons in Table */
+.btn-edit, .btn-delete {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.btn-edit:hover {
+    color: #007bff;
+}
+
+.btn-delete:hover {
+    color: red;
+}
+
+.fa-pencil {
+    color: #007bff;
+}
+
+.fa-trash {
+    color: red;
+}
+
+/* Filter and Search Bar */
+.filter-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-container select, .filter-container input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.filter-container input {
+    flex-grow: 1;
+}
+
+.filter-container select:hover, .filter-container input:hover {
+    border-color: #007bff;
+}
+
+/* Modal Styling */
+#edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+#edit-modal.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#edit-modal .modal-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#edit-modal h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#edit-modal label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #555;
+}
+
+#edit-modal input, #edit-modal select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#edit-modal button {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-modal .btn-save {
+    background-color: #007bff;
+    color: white;
+}
+
+#edit-modal .btn-cancel {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 10px;
+}
+
+#edit-modal .btn-save:hover {
+    background-color: #0056b3;
+}
+
+#edit-modal .btn-cancel:hover {
+    background-color: #b21f2d;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    transition: background-color 0.3s ease-in-out;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .password-hint {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+  }
+  

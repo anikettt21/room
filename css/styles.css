@@ -1,0 +1,343 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fc;
+    color: #111;
+}
+
+/* Header */
+.header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px; /* Reduced padding for mobile */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px; /* Smaller logo for mobile */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+    font-weight: bold;
+    color: #0c162d;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 10px; /* Reduced gap for mobile */
+}
+
+/* General Button Styles */
+.btn, .btn-outline {
+    padding: 8px 15px; /* Smaller padding for mobile */
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 14px; /* Smaller font size for mobile */
+}
+
+/* Solid Button (Find Your Interests) */
+.btn {
+    background: #0c162d;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background: #1a2948;
+    color: white;
+}
+
+/* Outline Button (Log In) */
+.btn-outline {
+    border: 2px solid #0c162d;
+    color: #0d1833;
+    text-decoration: none;
+    background: white;
+}
+
+.btn-outline:hover {
+    background: #0c162d;
+    color: white;
+}
+
+/* Remove underline and blue color from links inside buttons */
+.btn a, .btn-outline a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 40px 10px; /* Reduced padding for mobile */
+    background: #f8f9fc;
+}
+
+.hero h2 {
+    font-size: 24px; /* Smaller font size for mobile */
+    font-weight: bold;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 16px; /* Smaller font size for mobile */
+}
+
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Reduced gap for mobile */
+}
+
+/* Interest Section */
+.interests {
+    padding: 30px 10px; /* Reduced padding for mobile */
+    text-align: center;
+    background: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 15px; /* Reduced gap for mobile */
+    max-width: 100%; /* Full width for mobile */
+    margin: auto;
+    margin-top: 20px;
+}
+
+.card {
+    padding: 15px; /* Reduced padding for mobile */
+    background: white;
+    color: #111;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px; /* Smaller font size for mobile */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Feature Sections */
+.feature, .privacy, .energy-tracker {
+    text-align: center;
+    padding: 30px 10px; /* Reduced padding for mobile */
+}
+
+.feature p, .privacy p, .energy-tracker p {
+    color: #666;
+    font-size: 16px; /* Smaller font size for mobile */
+}
+
+/* Footer */
+.footer {
+    background: #0c162d;
+    color: white;
+    text-align: center;
+    padding: 20px 10px; /* Reduced padding for mobile */
+}
+
+.footer-links {
+    margin-top: 10px; /* Reduced margin for mobile */
+    display: flex;
+    flex-wrap: wrap; /* Allow links to wrap on small screens */
+    justify-content: center;
+    gap: 10px; /* Reduced gap for mobile */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Smaller font size for mobile */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Media Queries */
+@media (min-width: 600px) {
+    /* Adjustments for tablets and larger screens */
+    .header {
+        padding: 20px 50px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .nav-buttons {
+        gap: 15px;
+    }
+
+    .btn, .btn-outline {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        gap: 15px;
+    }
+
+    .interests {
+        padding: 60px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets and larger */
+        max-width: 600px;
+    }
+
+    .card {
+        padding: 20px;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .feature, .privacy, .energy-tracker {
+        padding: 60px;
+    }
+
+    .feature p, .privacy p, .energy-tracker p {
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+}
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 10px; /* Reduced gap for mobile */
+}
+
+/* General Button Styles */
+.btn, .btn-outline {
+    padding: 8px 15px; /* Smaller padding for mobile */
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 14px; /* Smaller font size for mobile */
+}
+
+/* Solid Button (Find Your Interests) */
+.btn {
+    background: #0c162d;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background: #1a2948;
+    color: white;
+}
+
+/* Outline Button (Log In) */
+.btn-outline {
+    border: 2px solid #0c162d;
+    color: #0d1833;
+    text-decoration: none;
+    background: white;
+}
+
+.btn-outline:hover {
+    background: #0c162d;
+    color: white;
+}
+
+/* Remove underline and blue color from links inside buttons */
+.btn a, .btn-outline a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hall Filter Dropdown */
+#hall-filter {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 2px solid #0c162d;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal:not(.hidden) {
+    display: flex;
+}
+.navbar a {
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ffcc00;
+    color: black;
+}
